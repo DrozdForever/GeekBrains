@@ -8,7 +8,7 @@ def currency_rates(currency):
     for i in content:
         if currency.upper() in i:
             print(currency.upper(), end=' ')
-
+            return float(i.replace('/', '').split('<Value>')[-2].replace(',', '.'))
 
 if __name__ == '__main__':
     print(currency_rates('eur'))
